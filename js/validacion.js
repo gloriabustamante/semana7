@@ -3,10 +3,10 @@ function validarPasswords() {
     var password2 = document.getElementById("password2").value;
 
     if (password1 != password2) {
-        showAlertError();
+        return false;
     }
     else {
-        showAlertSuccess();
+        return true;
     }
 }
 function showAlertSuccess() {

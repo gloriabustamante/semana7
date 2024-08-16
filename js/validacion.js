@@ -1,20 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var password1 = document.getElementById('password1').value;
-    var password2 = document.getElementById('password2').value;
 
     function validarInputs() {
         var nombre = document.getElementById('nombre').value;
         var apellido = document.getElementById('apellido').value;
         var email = document.getElementById('email').value;
-        if (nombre && apellido && email && password1 && password2 && validarCheckBox()) {
-            return true
+        if (!nombre && !apellido && !email && !password1 && !password2 && !validarCheckBox()) {
+            return false;
         } else {
-            return false
+            return true;
         }
     }
 
     function validarPasswords() {
-        if (password1.lenght >= 6 && password1 === password2) {
+        var password1 = document.getElementById('password1').value;
+        var password2 = document.getElementById('password2').value;
+        
+        if (password1.length >= 6 && password1 === password2) {
             return true;
         } else {
             return false;
